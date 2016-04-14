@@ -3,8 +3,6 @@
 // Globals - these need to be defined at the top of your code
 // and used in your Line Following procedure:
 
-// Example of outputing 1 stream of data to be graphed:
-
 // Parse and put data from USB Serial 
 void USBRead(String p_USBDataString) {
   Melody(ledPin, 1000, 10);
