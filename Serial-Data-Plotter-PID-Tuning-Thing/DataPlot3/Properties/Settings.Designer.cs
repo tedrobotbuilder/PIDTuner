@@ -37,7 +37,7 @@ namespace DataPlot3.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.05")]
         public decimal PTermSetting {
             get {
                 return ((decimal)(this["PTermSetting"]));
@@ -97,7 +97,7 @@ namespace DataPlot3.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4000")]
         public decimal SpeedSetting {
             get {
                 return ((decimal)(this["SpeedSetting"]));
@@ -116,6 +116,18 @@ namespace DataPlot3.Properties {
             }
             set {
                 this["YScaleSetting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public decimal LineSizeSetting {
+            get {
+                return ((decimal)(this["LineSizeSetting"]));
+            }
+            set {
+                this["LineSizeSetting"] = value;
             }
         }
     }
