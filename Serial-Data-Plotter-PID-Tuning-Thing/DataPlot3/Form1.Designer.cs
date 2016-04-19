@@ -1,8 +1,7 @@
-﻿namespace DataPlot3
-{
-    partial class Form1
-    {
+﻿namespace DataPlot3 {
+    partial class Form1 {
         /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
@@ -41,7 +40,7 @@
             this.YTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SeriesLineSizeNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.COMPortSendStatusLight = new PolyMonControls.StatusLight();
+            this.COMSendStatusLight = new PolyMonControls.StatusLight();
             this.SpeedNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.DTermNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -56,6 +55,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.XTextBox = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.StartStopButton = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.BattVoltsLabel = new System.Windows.Forms.Label();
             this.ComPortGroupBox.SuspendLayout();
             this.OptionsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeriesLineSizeNumericUpDown)).BeginInit();
@@ -161,13 +163,13 @@
             this.RawTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RawTextBox.Location = new System.Drawing.Point(9, 326);
+            this.RawTextBox.Location = new System.Drawing.Point(9, 352);
             this.RawTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.RawTextBox.MaxLength = 1000;
             this.RawTextBox.Multiline = true;
             this.RawTextBox.Name = "RawTextBox";
             this.RawTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.RawTextBox.Size = new System.Drawing.Size(185, 210);
+            this.RawTextBox.Size = new System.Drawing.Size(185, 184);
             this.RawTextBox.TabIndex = 1;
             // 
             // ZedGraphControl1
@@ -195,12 +197,13 @@
             this.OptionsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OptionsGroupBox.BackColor = System.Drawing.SystemColors.Control;
+            this.OptionsGroupBox.Controls.Add(this.BattVoltsLabel);
             this.OptionsGroupBox.Controls.Add(this.label5);
             this.OptionsGroupBox.Controls.Add(this.YTextBox);
             this.OptionsGroupBox.Controls.Add(this.RawTextBox);
             this.OptionsGroupBox.Controls.Add(this.label4);
             this.OptionsGroupBox.Controls.Add(this.SeriesLineSizeNumericUpDown);
-            this.OptionsGroupBox.Controls.Add(this.COMPortSendStatusLight);
+            this.OptionsGroupBox.Controls.Add(this.COMSendStatusLight);
             this.OptionsGroupBox.Controls.Add(this.SpeedNumericUpDown);
             this.OptionsGroupBox.Controls.Add(this.label3);
             this.OptionsGroupBox.Controls.Add(this.DTermNumericUpDown);
@@ -261,6 +264,11 @@
             this.SeriesLineSizeNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SeriesLineSizeNumericUpDown.Location = new System.Drawing.Point(157, 37);
             this.SeriesLineSizeNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
+            this.SeriesLineSizeNumericUpDown.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.SeriesLineSizeNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -275,19 +283,18 @@
             0,
             0});
             // 
-            // COMPortSendStatusLight
+            // COMSendStatusLight
             // 
-            this.COMPortSendStatusLight.BackgroundImage = System.Drawing.Color.Empty;
-            this.COMPortSendStatusLight.BackgroundImageLayout = System.Drawing.Color.Empty;
-            this.COMPortSendStatusLight.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.COMPortSendStatusLight.Location = new System.Drawing.Point(8, 291);
-            this.COMPortSendStatusLight.Margin = new System.Windows.Forms.Padding(2);
-            this.COMPortSendStatusLight.Name = "COMPortSendStatusLight";
-            this.COMPortSendStatusLight.OffColor = System.Drawing.Color.Red;
-            this.COMPortSendStatusLight.Size = new System.Drawing.Size(45, 30);
-            this.COMPortSendStatusLight.TabIndex = 4;
-            this.COMPortSendStatusLight.Text = "statusLight1";
-            this.COMPortSendStatusLight.Value = 0D;
+            this.COMSendStatusLight.BackgroundImage = System.Drawing.Color.Empty;
+            this.COMSendStatusLight.BackgroundImageLayout = System.Drawing.Color.Empty;
+            this.COMSendStatusLight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.COMSendStatusLight.Location = new System.Drawing.Point(-1, 291);
+            this.COMSendStatusLight.Margin = new System.Windows.Forms.Padding(2);
+            this.COMSendStatusLight.Name = "COMSendStatusLight";
+            this.COMSendStatusLight.OffColor = System.Drawing.Color.Red;
+            this.COMSendStatusLight.Size = new System.Drawing.Size(45, 30);
+            this.COMSendStatusLight.TabIndex = 4;
+            this.COMSendStatusLight.Text = "statusLight1";
             // 
             // SpeedNumericUpDown
             // 
@@ -452,7 +459,7 @@
             this.COMSendButton.CausesValidation = false;
             this.COMSendButton.Enabled = false;
             this.COMSendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.COMSendButton.Location = new System.Drawing.Point(49, 291);
+            this.COMSendButton.Location = new System.Drawing.Point(40, 291);
             this.COMSendButton.Name = "COMSendButton";
             this.COMSendButton.Size = new System.Drawing.Size(75, 30);
             this.COMSendButton.TabIndex = 6;
@@ -520,11 +527,41 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // StartStopButton
+            // 
+            this.StartStopButton.CausesValidation = false;
+            this.StartStopButton.Enabled = false;
+            this.StartStopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartStopButton.Location = new System.Drawing.Point(741, 556);
+            this.StartStopButton.Name = "StartStopButton";
+            this.StartStopButton.Size = new System.Drawing.Size(75, 89);
+            this.StartStopButton.TabIndex = 19;
+            this.StartStopButton.Text = "Start Robot";
+            this.StartStopButton.UseVisualStyleBackColor = true;
+            this.StartStopButton.Click += new System.EventHandler(this.StartStopButton_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 5000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // BattVoltsLabel
+            // 
+            this.BattVoltsLabel.AutoSize = true;
+            this.BattVoltsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BattVoltsLabel.Location = new System.Drawing.Point(8, 324);
+            this.BattVoltsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BattVoltsLabel.Name = "BattVoltsLabel";
+            this.BattVoltsLabel.Size = new System.Drawing.Size(136, 26);
+            this.BattVoltsLabel.TabIndex = 19;
+            this.BattVoltsLabel.Text = "Battery Volts";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 659);
+            this.Controls.Add(this.StartStopButton);
             this.Controls.Add(this.OptionsGroupBox);
             this.Controls.Add(this.ZedGraphControl1);
             this.Controls.Add(this.ComPortGroupBox);
@@ -573,11 +610,14 @@
         private System.Windows.Forms.Label ITermLabel;
         private System.Windows.Forms.NumericUpDown SpeedNumericUpDown;
         private System.Windows.Forms.Label label3;
-        private PolyMonControls.StatusLight COMPortSendStatusLight;
+        private PolyMonControls.StatusLight COMSendStatusLight;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown SeriesLineSizeNumericUpDown;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox YTextBox;
+        private System.Windows.Forms.Button StartStopButton;
+        private System.Windows.Forms.Label BattVoltsLabel;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
