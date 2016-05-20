@@ -56,6 +56,9 @@ QTR_NO_EMITTER_PIN // no on/off pin
 unsigned int edgeSensorValues[2];
 
 // ================== Globals ===================
+
+//#define PipeSensorPin A3
+
 // Line follow globals
 float g_MaxFollowSpeed = 12000;//10200
 float kp= 2.8;//2.8
@@ -120,6 +123,8 @@ void setup() {
   delay(50);  
   
   Init_Motors();
+
+  pinMode(A3, INPUT);
    
   // QTR Setup
   pinMode(EMITTER_PIN, OUTPUT);// turns QTR line sensors on and off
@@ -158,6 +163,8 @@ void setup() {
 void loop() {
   static boolean s_hasBeenStarted = false;
   static int32_t s_batCheckMillis=0; 
+  
+  PipeSensor();
   
   if((millis() - s_batCheckMillis) > 240000) {
     //Melody(ledPin, 500, 2000);//4 min alarm
