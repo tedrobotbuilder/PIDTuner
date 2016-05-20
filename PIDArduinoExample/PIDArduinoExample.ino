@@ -8,14 +8,12 @@
 #define ledPin         13
 #define address        0x80      //Roboclaw Address
 
-// IMU
-//Adafruit_BNO055 imu55 = Adafruit_BNO055(55);
-
 //Setup communcaitions with roboclaw motor controler
 BMSerial terminal(0,1); // serial print replacement
 RoboClaw roboclaw(19,18,10000);// RX, TX, Timeout (ms)
 
 // ================== C class for this robot ===========
+// This is a work in progress. I would like to convert OO code
 class PERobot{
  public:
  boolean BattReadingGood=false;
@@ -27,8 +25,6 @@ class PERobot{
 };
 
 PERobot Bot = PERobot();// instance is Bot
-
-//float Speed=0;
 
 // ================== QTR Line =========================
 #define NUM_SENSORS 24 // number of sensors used
@@ -67,7 +63,7 @@ float ki= .02;//.14
 float kd= .5;
 
 /* odometer maintains these global variables: */
-float thetaH;          /* bot heading */
+float thetaH;         /* bot heading */
 float X_pos;          /* bot X position in inches */
 float Y_pos;          /* bot Y position in inches */
 boolean PcDataComplete = false;  // whether the string is complete
@@ -124,26 +120,7 @@ void setup() {
   delay(50);  
   
   Init_Motors();
-  
-//  Serial.print( "Start ReturnLeftEnc: " );
-//  Serial.println( ReturnLeftEnc() );
-//  Serial.print( "ReturnRightEnc: " );
-//  Serial.println( ReturnRightEnc() );
-//  Serial.print( "ReturnAvgEnc: " );
-//  Serial.println( ReturnAvgEnc() );
-
-//  Wire.begin();    //Init the I2C    
-//  delay(500);  
-
-//  if(!imu55.begin()) {
-//    /* There was a problem detecting the BNO055 ... check your connections */
-//    Serial.print("BNO055 IMU Failed to Start");
-//    while(1);
-//  }
-    
-//  imu55.setExtCrystalUse(true);
-  
- 
+   
   // QTR Setup
   pinMode(EMITTER_PIN, OUTPUT);// turns QTR line sensors on and off
 //  qtrLine.emittersOff();
@@ -151,12 +128,6 @@ void setup() {
   
   pinMode(ledPin, OUTPUT); // Speaker and LED Pin 13
 
-//  Serial2.begin(9600); // Wii CAM  
-//  delay(50);
-  //Serial3.begin(115200); // Roboclaw, was Bluetooth
-//  delay(50);  
-//  Serial1.begin(9600); // not used yet, was XBee
-//  delay(50);  
   Serial2.begin(9600); // XBee, was not used before on PE1
   delay(50);  
 
