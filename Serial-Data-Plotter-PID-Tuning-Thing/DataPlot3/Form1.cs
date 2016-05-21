@@ -157,6 +157,11 @@ namespace DataPlot3 {
                         Console.WriteLine("got back bv");
                     }
 
+                    if (COMRx.StartsWith("lt")) {
+                        lapTimeTextBox.Text = vDataValue;
+                        Console.WriteLine("got back lap-time");
+                    }
+
                     if (COMRx.StartsWith("ss")) {
                         if (vDataValue == MyConstants.Stop) {
                             Console.WriteLine("got back Stop");

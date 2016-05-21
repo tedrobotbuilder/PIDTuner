@@ -31,7 +31,7 @@ void PipeSensor(){//============================================================
     
     double lapTime = millis() - s_lastLapTime;
       
-    if(g_distancePipeSensor > 250 && g_stdDevPipeSensor < 10 && lapTime > 3000){
+    if(g_distancePipeSensor > 250 && g_stdDevPipeSensor < 10 && lapTime > 1000){
 //      Serial.println(lapTime/1000);
       s_lastLapTime=millis();
 //      g_lapTime = lapTime;

@@ -36,6 +36,7 @@
             this.RawTextBox = new System.Windows.Forms.TextBox();
             this.ZedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.OptionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.BattVoltsLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.YTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,7 +58,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.StartStopButton = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.BattVoltsLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lapTimeTextBox = new System.Windows.Forms.TextBox();
             this.ComPortGroupBox.SuspendLayout();
             this.OptionsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeriesLineSizeNumericUpDown)).BeginInit();
@@ -160,8 +162,7 @@
             // 
             // RawTextBox
             // 
-            this.RawTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.RawTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RawTextBox.Location = new System.Drawing.Point(9, 352);
             this.RawTextBox.Margin = new System.Windows.Forms.Padding(2);
@@ -169,7 +170,7 @@
             this.RawTextBox.Multiline = true;
             this.RawTextBox.Name = "RawTextBox";
             this.RawTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.RawTextBox.Size = new System.Drawing.Size(185, 184);
+            this.RawTextBox.Size = new System.Drawing.Size(185, 137);
             this.RawTextBox.TabIndex = 1;
             // 
             // ZedGraphControl1
@@ -197,6 +198,8 @@
             this.OptionsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OptionsGroupBox.BackColor = System.Drawing.SystemColors.Control;
+            this.OptionsGroupBox.Controls.Add(this.lapTimeTextBox);
+            this.OptionsGroupBox.Controls.Add(this.label6);
             this.OptionsGroupBox.Controls.Add(this.BattVoltsLabel);
             this.OptionsGroupBox.Controls.Add(this.label5);
             this.OptionsGroupBox.Controls.Add(this.YTextBox);
@@ -226,6 +229,17 @@
             this.OptionsGroupBox.TabIndex = 3;
             this.OptionsGroupBox.TabStop = false;
             this.OptionsGroupBox.Text = "Options";
+            // 
+            // BattVoltsLabel
+            // 
+            this.BattVoltsLabel.AutoSize = true;
+            this.BattVoltsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BattVoltsLabel.Location = new System.Drawing.Point(8, 324);
+            this.BattVoltsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BattVoltsLabel.Name = "BattVoltsLabel";
+            this.BattVoltsLabel.Size = new System.Drawing.Size(136, 26);
+            this.BattVoltsLabel.TabIndex = 19;
+            this.BattVoltsLabel.Text = "Battery Volts";
             // 
             // label5
             // 
@@ -529,6 +543,7 @@
             // 
             // StartStopButton
             // 
+            this.StartStopButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.StartStopButton.CausesValidation = false;
             this.StartStopButton.Enabled = false;
             this.StartStopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -545,16 +560,28 @@
             this.timer2.Interval = 5000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // BattVoltsLabel
+            // label6
             // 
-            this.BattVoltsLabel.AutoSize = true;
-            this.BattVoltsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BattVoltsLabel.Location = new System.Drawing.Point(8, 324);
-            this.BattVoltsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.BattVoltsLabel.Name = "BattVoltsLabel";
-            this.BattVoltsLabel.Size = new System.Drawing.Size(136, 26);
-            this.BattVoltsLabel.TabIndex = 19;
-            this.BattVoltsLabel.Text = "Battery Volts";
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 491);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 26);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Lap Time";
+            // 
+            // lapTimeTextBox
+            // 
+            this.lapTimeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lapTimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lapTimeTextBox.Location = new System.Drawing.Point(111, 493);
+            this.lapTimeTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.lapTimeTextBox.Name = "lapTimeTextBox";
+            this.lapTimeTextBox.Size = new System.Drawing.Size(77, 32);
+            this.lapTimeTextBox.TabIndex = 21;
+            this.lapTimeTextBox.Text = "0";
             // 
             // Form1
             // 
@@ -618,6 +645,8 @@
         private System.Windows.Forms.Button StartStopButton;
         private System.Windows.Forms.Label BattVoltsLabel;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox lapTimeTextBox;
+        private System.Windows.Forms.Label label6;
     }
 }
 
