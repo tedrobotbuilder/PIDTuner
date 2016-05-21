@@ -8,6 +8,8 @@
 #define ledPin         13
 #define address        0x80      //Roboclaw Address
 
+// A comment
+
 //Setup communcaitions with roboclaw motor controler
 BMSerial terminal(0,1); // serial print replacement
 RoboClaw roboclaw(19,18,10000);// RX, TX, Timeout (ms)
