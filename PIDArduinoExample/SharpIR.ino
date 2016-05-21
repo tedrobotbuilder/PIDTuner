@@ -13,7 +13,7 @@ void PipeSensor(){//============================================================
   //Note: the closer the object the higher the reading.  At point blank about 400.
   //at about 5 feet: zero.  140 is about 38 inches
       
-  float numberOfavg = 20; // number of readings per avg
+  float numberOfavg = 5; // number of readings per avg
   float rawIR = analogRead(A5); // read the sensor
   g_sumPipeSensor += rawIR; // sum the raws
   g_sumSquaresPipeSensor += pow(rawIR, 2); // sum the squares of the raws
