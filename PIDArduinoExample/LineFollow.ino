@@ -15,7 +15,7 @@ void DoLineFollowSetup() {
   } 
   
   FollowLineLoop(); // follow the line
-  //PrintQTR();
+//  PrintQTR();
 //  PrintCalQTR();
 //  delay(200);
 }
@@ -72,11 +72,6 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   
   // integral (sum of the errors over time) of the position. I
   iLine = iLine + pLine;
- 
-//  if((millis() - s_iUnwind_millis) > millisToUnwindI){
-//    iLine = iLine * UnwindPercent;
-//    s_iUnwind_millis = millis();
-//  }
   
   // Remember the last position.
   s_last_pLine = pLine;
@@ -98,5 +93,7 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     terminal.print(iLine*ki);
     terminal.print(",");
     terminal.print(dLine*kd);
+//    terminal.print(",");
+//    terminal.print(g_lapTime);
     terminal.println(",");// must end with line feed and comma
 }
