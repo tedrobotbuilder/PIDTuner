@@ -186,9 +186,9 @@ void loop() {
   } else if (s_hasBeenStarted) {//stopped and has been started before
     g_MaxFollowSpeed = 2000;
     DoLineFollowSetup();
-    delay(2000);
+    delay(1000);
     RoboDrive(0,0);
-    delay(500);
+    delay(100);
     RoboDuty(0,0);
     s_hasBeenStarted=false;// kill this loop
     terminal.println("Stopped");

@@ -26,9 +26,6 @@ void DoLineFollowSetup() {
 // here we follow the line
 
 void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  float millisToUnwindI = 1000;
-  float UnwindPercent = .3;
-  static float s_iUnwind_millis = millis() - millisToUnwindI+1;
   float linesToAvg = 5;
    
   float pLine=0;
@@ -40,7 +37,7 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   static boolean s_rampedUpSpeed = false;
   static long s_FollowLine_millis = millis() - 5;
   static long s_FollowLinePrint_millis = millis() - 51;
-  int millisPerLoop = 10;
+  int millisPerLoop = 50;
   static long s_millisOffLine = 0;
   static long s_millisOffLineCount = 0;
     
