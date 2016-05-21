@@ -163,7 +163,8 @@ void setup() {
 void loop() {
   static boolean s_hasBeenStarted = false;
   static int32_t s_batCheckMillis=0; 
-  
+
+  // Look for start finish Marker/Pipe
   PipeSensor();
   
   if((millis() - s_batCheckMillis) > 240000) {
@@ -171,7 +172,7 @@ void loop() {
     s_batCheckMillis = millis();
   }
   
-//Output some data to test DataPlot
+//Output some data to test DataPloter
 //  static float xtempx = .01;
 //  xtempx++;
 //  terminal.print(xtempx);
