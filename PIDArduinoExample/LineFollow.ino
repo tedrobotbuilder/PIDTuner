@@ -91,7 +91,7 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     return;// Has not been long enough to print
   }
   s_FollowLinePrint_millis = millis();
-  
+
     terminal.print(pLine*kp);
     terminal.print(",");
     terminal.print(iLine*ki);

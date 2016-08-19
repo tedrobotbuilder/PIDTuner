@@ -62,10 +62,10 @@ unsigned int edgeSensorValues[2];
 //#define PipeSensorPin A3
 
 // Line follow globals
-float g_MaxFollowSpeed = 12000;//10200
-float kp= 2.8;//2.8
-float ki= .02;//.14
-float kd= .5;
+float g_MaxFollowSpeed = 9000;//10200
+float kp= 1.5;//2.8
+float ki= 0;//.14
+float kd= .1;
 
 /* odometer maintains these global variables: */
 float thetaH;         /* bot heading */
