@@ -85,7 +85,7 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   int rightSpeed = ( constrain(Bot.Speed - power_difference, -31900, 31900) );
   int leftSpeed = ( constrain(Bot.Speed + power_difference, -31900, 31900) );
   
-  RoboDuty(leftSpeed, rightSpeed);
+  RoboDrive(leftSpeed, rightSpeed);
   
   if((millis() - s_FollowLinePrint_millis) > 200){
     return;// Has not been long enough to print
