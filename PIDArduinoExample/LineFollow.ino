@@ -30,6 +30,7 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    
   float pLine=0;
   static float iLine=0; 
+  static float s_ki;
   float dLine=0; 
   float lineError=0;
   float s_last_pLine = 0;
@@ -68,10 +69,16 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   }
   
   // integral (sum of the errors over time) of the position. I
-  iLine = iLine + pLine;
+  if(s_ki == ki) {
+    iLine = iLine + pLine;
+  } else {
+    // ki changed, so clear iLine:
+    iLine = 0;
+  }
   
-  // Remember the last position.
+  // Remember the last position and last ki.
   s_last_pLine = pLine;
+  s_ki = ki;
 
   float power_difference = float(pLine*kp - iLine*ki + dLine*kd);
 
