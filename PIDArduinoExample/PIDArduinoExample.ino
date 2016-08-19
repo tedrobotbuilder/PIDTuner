@@ -15,15 +15,15 @@ BMSerial terminal(0,1); // serial print replacement
 RoboClaw roboclaw(19,18,10000);// RX, TX, Timeout (ms)
 
 // ================== C class for this robot ===========
-// This is a work in progress. I would like to convert OO code
-class PERobot{
- public:
- boolean BattReadingGood=false;
- float Speed=0;
-
- PERobot(){ //the constructor
+// This object is a work in progress. I would like to convert OO code
+class PERobot {
+  public:
+  boolean BattReadingGood=false;
+  float Speed=0;
+  
+  PERobot() { //the constructor
    //i=0;
- }
+  }
 };
 
 PERobot Bot = PERobot();// instance is Bot

@@ -57,7 +57,7 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   
   // Get the position of the line.
   unsigned int position = qtrLine.readLine(lineSensorValues);
-  lineError += (((float)position) - ( (NUM_SENSORS*1000/2)-500) ); //the center reading
+  lineError = (((float)position) - ( (NUM_SENSORS*1000/2)-500) ); //the center reading
   pLine = lineError;
   
   // Compute the derivative (change in the error) D
