@@ -62,6 +62,7 @@ unsigned int edgeSensorValues[2];
 //#define PipeSensorPin A3
 
 // Line follow globals
+// fastest settings: .52, -.01, .25, 5300
 float g_MaxFollowSpeed = 1000;//10200
 float kp= .5;//2.8
 float ki= 0;//.14

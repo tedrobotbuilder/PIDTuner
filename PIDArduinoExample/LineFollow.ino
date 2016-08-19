@@ -55,12 +55,12 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     s_rampedUpSpeed = true;
   }
   
-  // Get the position of the line.
+  // Get the position of the line which is the error: P
   unsigned int position = qtrLine.readLine(lineSensorValues);
   lineError = (((float)position) - ( (NUM_SENSORS*1000/2)-500) ); //the center reading
   pLine = lineError;
   
-  // Compute the derivative (change in the error) D
+  // Compute the derivative (change in the error): D
   if(s_firstD == false){// first time through: don't let D be large
     dLine = pLine - s_last_pLine;
   } else {
@@ -68,11 +68,11 @@ void FollowLineLoop() { //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     s_firstD = false;
   }
   
-  // integral (sum of the errors over time) of the position. I
+  // integral (sum of the errors over time) of the position: I
   if(s_ki == ki) {
     iLine = iLine + pLine;
   } else {
-    // ki changed, so clear iLine:
+    // ki changed while tuning, so clear iLine:
     iLine = 0;
   }
   

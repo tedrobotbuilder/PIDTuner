@@ -21,14 +21,14 @@ namespace DataPlot3 {
         int[,] colourList = {{128,0,0},{0,128,0},{0,0,128},{0,128,128},{128,128,0},{255,0,0},{0,255,0},
                             {0,0,255},{255,255,0},{255,0,255},{0,255,255}};
 
+        // this list is a ZedGraph object
         List<PointPairList> Data = new List<PointPairList>();
 
         delegate void SerialDataReceivedDelegate(object sender, SerialDataReceivedEventArgs e);
 
         delegate void SerialErrorReceivedDelegate(object sender, SerialErrorReceivedEventArgs e);
        
-        public Form1()
-        {
+        public Form1() {
             InitializeComponent();
         }
 
