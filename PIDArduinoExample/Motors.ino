@@ -52,7 +52,7 @@ float ReturnAvgEnc() {
 
 // ================== RoboDrive - Speed Control ===================
 
-// Drive both at a given speed motors with Roboclaw - corrects for sign on reversed motor
+// Drive both at a given speed motors with Roboclaw. "-" corrects for sign on reversed motor
 void RoboDrive(int _Left, int _Right) {  
   roboclaw.SpeedM1(0x80,-_Left);
   roboclaw.SpeedM2(0x80,_Right);
@@ -60,7 +60,7 @@ void RoboDrive(int _Left, int _Right) {
 
 // ================== RoboDuty - Voltage Control ===================
 
-// Drive both motors at a voltage/duty level with Roboclaw - corrects for sign on reversed motor
+// Drive both motors at a voltage/duty level with Roboclaw. "-" corrects for sign on reversed motor
 void RoboDuty(int _Left, int _Right) {  
   roboclaw.DutyM1(0x80,-_Left);
   roboclaw.DutyM2(0x80,_Right);

@@ -63,7 +63,7 @@ unsigned int edgeSensorValues[2];
 
 // Line follow globals
 // fastest settings: .52, -.01, .25, 5300
-float g_MaxFollowSpeed = 1000;//10200
+float g_MaxFollowSpeed = 0;//10200
 float kp= .5;//2.8
 float ki= 0;//.14
 float kd= .1;
@@ -160,7 +160,7 @@ void setup() {
 
 // #####################  Main Loop  ############################################
 // #####################  Main Loop  ############################################
-// #####################  Main Loop  ############################################
+// =====================  Main Loop  ============================================
 // #####################  Main Loop  ############################################
 
 void loop() {
@@ -187,15 +187,16 @@ void loop() {
     DoLineFollowSetup();
     s_batCheckMillis = millis();
   } else if (s_hasBeenStarted) {//stopped and has been started before
-    g_MaxFollowSpeed = 2000;
-    DoLineFollowSetup();
-    delay(1000);
+//    g_MaxFollowSpeed = 2000;
+//    DoLineFollowSetup();
+//    delay(1000);
     RoboDrive(0,0);
     delay(100);
     RoboDuty(0,0);
-    s_hasBeenStarted=false;// kill this loop
-    terminal.println("Stopped");
+    //s_hasBeenStarted=false;// kill this loop
+    //terminal.println("Stopped");
     CheckBotBattery();
+    terminal.println("0,0,0,");
   }
 }    
 
@@ -210,7 +211,7 @@ void CheckBotBattery() {//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   if( (battReading < 10.3) && (battReading > 6) ){
     terminal.print( battReading ); 
 //    g_Start = false;
-    terminal.println( " Battery Low!" );  //show batt volts USB
+    //terminal.println( " Battery Low!" );  //show batt volts USB
     Melody(ledPin, 500, 1);
   } 
 }
